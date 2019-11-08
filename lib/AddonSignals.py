@@ -27,7 +27,7 @@ def _encodeData(data):
         json_data = json_data.encode('utf-8')
     encoded_data = base64.b64encode(json_data)
     if sys.version_info[0] > 2:
-        encoded_data.decode('ascii')
+        encoded_data = encoded_data.decode('ascii')
     return '\\"[\\"{0}\\"]\\"'.format(encoded_data)
 
 
